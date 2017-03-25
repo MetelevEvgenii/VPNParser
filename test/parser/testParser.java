@@ -62,4 +62,17 @@ public class testParser {
         assertEquals("-101.18",parser.money.get(0));
         parser.closeDriver();
     }
+    @Test
+    public void checkTrafficOn()
+    {
+        Parser parser = new Parser();
+        parser.setSetting();
+        parser.clickOnStat();
+        parser.writeLogin(parser.getLogin1());
+        parser.writePassword(parser.getPassword1());
+        parser.clickLogin();
+        parser.clickOnReport();
+        assertEquals("46211.028562546",parser.traffic.get(0));
+        parser.closeDriver();
+    }
 }

@@ -16,12 +16,15 @@ public class Parser {
     public String loginButtonXPATH = "/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/form[@class='form']/table/tbody/tr/td/table[@class='layout-cover']/tbody/tr/td/table[@class='layout']/tbody/tr[4]/td[@class='layout-cell'][2]/input[@class='submit']";
     public String mainMenuTextXPATH = "/html/body[@class='body']/table/tbody/tr/td[@class='menu-area']/div[@class='mainmenu-act']";
     public String moneyXPATH =  "/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/table[@class='utm-table-cover']/tbody/tr/td/table[@class='utm-table']/tbody/tr[4]/td[@class='utm-cell'][2]";
+    public String reportButtonXPATH = "/html/body[@class='body']/table/tbody/tr/td[@class='menu-area']/div[@class='mainmenu-inact'][1]/a";
+    public String reportLookButtonXPATH =  "/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/form[@class='form']/table/tbody/tr/td/table[@class='layout-cover']/tbody/tr/td/table[@class='layout']/tbody/tr[1]/td[@class='layout-cell'][5]/input";
+    public String reportIncomingMBXPATH = "/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/table[@class='utm-table-cover']/tbody/tr/td/table[@class='utm-table']/tbody/tr[2]/td[@class='utm-cell'][2]";
     private String adressURL = "http://vpn.unn.ru";
     private String login1 = "u-1170";
     private String password1 = "fawiti";
 
     public ArrayList<String> money= new ArrayList<String>();
-
+    public ArrayList<String> traffic= new ArrayList<String>();
     public WebDriver driver;
 
     public String getURL() {
@@ -67,7 +70,13 @@ public class Parser {
     public void viewMoney()
     {
       this.money.add( driver.findElement(By.xpath(moneyXPATH)).getText());
+    }
 
+    public void clickOnReport()
+    {
+        driver.findElement(By.xpath(reportButtonXPATH)).click();
+        driver.findElement(By.xpath(reportLookButtonXPATH)).click();
+        this.traffic.add(driver.findElement(By.xpath(reportIncomingMBXPATH)).getText());
     }
 
     public void closeDriver()
