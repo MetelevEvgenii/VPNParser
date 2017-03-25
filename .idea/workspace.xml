@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b4eb606-7e9e-4532-a90b-82e2385dc5f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/parser/Parser.java" afterPath="$PROJECT_DIR$/src/parser/Parser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/parser/testParser.java" afterPath="$PROJECT_DIR$/test/parser/testParser.java" />
-    </list>
+    <list default="true" id="9b4eb606-7e9e-4532-a90b-82e2385dc5f2" name="Default" comment="" />
     <ignored path="VPNParser.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -62,8 +59,8 @@
       <file leaf-file-name="testParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/parser/testParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="74" column="53" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -193,7 +190,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.testParser.checkTrafficOn">
+  <component name="RunManager" selected="JUnit.testParser">
     <configuration default="false" name="testParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -577,11 +574,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.testParser.checkTrafficOn" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.testParser.checkMoneyOn" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.testParser.logInNotRight" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.testParser.logInOnVPN1170" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.testParser" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.testParser" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.testParser.checkTrafficOn" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.testParser.checkMoneyOn" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.testParser.logInNotRight" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.testParser.logInOnVPN1170" />
       </list>
     </recent_temporary>
   </component>
@@ -599,6 +596,9 @@
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="testParser - 2017.03.25 at 23h 45m 21s.xml">
+      <configuration name="testParser" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="testParser_checkMoneyOn - 2017.03.25 at 20h 21m 28s.xml">
       <configuration name="testParser.checkMoneyOn" configurationId="JUnit" />
     </history-entry>
@@ -611,14 +611,11 @@
     <history-entry file="testParser_checkTrafficOn - 2017.03.25 at 20h 31m 17s.xml">
       <configuration name="testParser.checkTrafficOn" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="testParser_checkTrafficOn - 2017.03.25 at 23h 39m 49s.xml">
+      <configuration name="testParser.checkTrafficOn" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="testParser_logInNotRight - 2017.03.25 at 20h 12m 33s.xml">
       <configuration name="testParser.logInNotRight" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="testParser_logInOnVPN1170 - 2017.03.25 at 20h 07m 14s.xml">
-      <configuration name="testParser.logInOnVPN1170" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="testParser_logInOnVPN1170 - 2017.03.25 at 20h 08m 39s.xml">
-      <configuration name="testParser.logInOnVPN1170" configurationId="JUnit" />
     </history-entry>
     <history-entry file="testParser_logInOnVPN1170 - 2017.03.25 at 20h 10m 21s.xml">
       <configuration name="testParser.logInOnVPN1170" configurationId="JUnit" />
@@ -737,8 +734,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/parser/testParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="74" column="53" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
