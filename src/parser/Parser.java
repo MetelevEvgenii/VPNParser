@@ -1,8 +1,6 @@
 package parser;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,7 +24,13 @@ public class Parser {
     public String obsheeXPATH =  "/html/body[@class='body']/table/tbody/tr/td[@class='menu-area']/div[@class='mainmenu-inact'][1]/a";
     public String exitButtonXPATH =  "/html/body[@class='body']/table/tbody/tr/td[@class='menu-area']/div[@class='mainmenu-inact'][3]/a/b";
     private String adressURL = "http://vpn.unn.ru";
-    private String login1 = "u-1170";
+
+    private String[] logins={"u-1170","u-2043","u-0953","u-1683","u-1727"};
+    private String[] passwords={"fawiti","fu6mema","wu3kaco","goru6cu","zeka6ta"};
+
+
+
+   /* private String login1 = "u-1170";
     private String password1 = "fawiti";
 
     private String login2 = "u-2043";
@@ -39,41 +43,44 @@ public class Parser {
     private String password4 = "goru6cu";
 
     private String login5 = "u-1727";
-    private String password5 = "zeka6ta";
+    private String password5 = "zeka6ta";*/
 
     public ArrayList<String> money= new ArrayList<>();
     public ArrayList<String> traffic= new ArrayList<>();
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
-    public WebDriver driver;
+    public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
     public String getURL() {
         return adressURL;
     }
 
-    public String getLogin1() {
-        return login1;
-    }
-
-    public String getPassword1() {
-        return password1;
-    }
-
-    public void setSetting()
+    public String getLogin_i(int i)
     {
-        System.setProperty("webdriver.chrome.driver", "/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get(this.getURL());
-
+        return this.logins[i];
+    }
+    public String getPassword_i(int i)
+    {
+        return this.passwords[i];
     }
     public void setSettingHTML()
     {
         driver = new HtmlUnitDriver();
+        driver.setJavascriptEnabled(true);
         driver.get(this.getURL());
+        driverWait = new WebDriverWait(driver,10);
 
     }
+   /* public void setSetting()
+    {
+        System.setProperty("webdriver.chrome.driver", "/chromedriver_win32/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.get(this.getURL());
+        driverWait = new WebDriverWait(driver,10);
+    }*/
     public void clickOnStat()
     {
-        driver.findElement(By.xpath(StatButtonXPATH)).click();
+        //driver.findElement(By.xpath(StatButtonXPATH)).click();
+        this.clickByXPATH(StatButtonXPATH);
     }
 
     public void writeLogin(String logIn)
@@ -87,32 +94,34 @@ public class Parser {
 
     public void clickLogin()
     {
-        driver.findElement(By.xpath(loginButtonXPATH)).click();
-        if (driver.findElement(By.xpath(mainMenuTextXPATH)).getText().equals("Вход в личный кабинет"))
+        //driver.findElement(By.xpath(loginButtonXPATH)).click();
+        this.clickWithWaitingByXPATH(loginButtonXPATH);
+        if (this.getTextWithWaitingByXPATH(mainMenuTextXPATH).equals("Вход в личный кабинет"))
             return;
+
     }
 
     public void viewMoney()
     {
-      this.money.add( driver.findElement(By.xpath(moneyXPATH)).getText());
+      this.money.add( this.getTextWithWaitingByXPATH(moneyXPATH));
     }
 
     public void clickOnReport()
     {
-        (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportButtonXPATH))).click();
+        this.clickWithWaitingByXPATH(reportButtonXPATH);
+        this.clickWithWaitingByXPATH(reportLookButtonXPATH);
+        this.traffic.add(this.driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportIncomingMBXPATH))).getText());
 
-        (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportLookButtonXPATH))).click();
-        this.traffic.add((new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportLookButtonXPATH))).getText());
     }
     public void clickOnfuturePay()
     {
-        driver.findElement(By.xpath(futurePaidButtonXPATH)).click();
+        //driver.findElement(By.xpath(futurePaidButtonXPATH)).click();
+        this.clickByXPATH(futurePaidButtonXPATH);
         if (driver.getPageSource().contains("Внести платеж"))
             isEnableFuturePay.add("yes");
-        else isEnableFuturePay.add("no");
+        else
+            isEnableFuturePay.add("no");
+
     }
 
     public void closeDriver()
@@ -120,7 +129,7 @@ public class Parser {
         driver.quit();
     }
 
-    public String getLogin2() {
+  /*  public String getLogin2() {
         return login2;
     }
 
@@ -134,17 +143,19 @@ public class Parser {
 
     public String getPassword3() {
         return password3;
-    }
+    }*/
     public void clickOnObshee()
     {
-        driver.findElement(By.xpath(obsheeXPATH)).click();
+        //driver.findElement(By.xpath(obsheeXPATH)).click();
+        this.clickByXPATH(obsheeXPATH);
     }
     public void clickOnExit()
     {
-        driver.findElement(By.xpath(exitButtonXPATH)).click();
+        //driver.findElement(By.xpath(exitButtonXPATH)).click();
+        this.clickByXPATH(exitButtonXPATH);
     }
 
-    public String getLogin4() {
+  /*  public String getLogin4() {
         return login4;
     }
 
@@ -158,5 +169,23 @@ public class Parser {
 
     public String getPassword5() {
         return password5;
+    }*/
+    public String getTextByXPATH(String xpathString)
+    {
+        return driver.findElement(By.xpath(xpathString)).getText();
+    }
+
+    public void clickByXPATH(String xpathString)
+    {
+         driver.findElement(By.xpath(xpathString)).click();
+    }
+
+    public void clickWithWaitingByXPATH(String xpathString)
+    {
+        driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathString))).click();
+    }
+    public String getTextWithWaitingByXPATH(String xpathString)
+    {
+        return driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathString))).getText();
     }
 }
