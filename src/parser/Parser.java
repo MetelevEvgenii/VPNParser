@@ -3,6 +3,9 @@ package parser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 
@@ -42,7 +45,7 @@ public class Parser {
     public ArrayList<String> traffic= new ArrayList<>();
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
     public WebDriver driver;
-
+    public WebDriverWait driverWait;
     public String getURL() {
         return adressURL;
     }
@@ -59,6 +62,12 @@ public class Parser {
     {
         System.setProperty("webdriver.chrome.driver", "/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
+        driver.get(this.getURL());
+
+    }
+    public void setSettingHTML()
+    {
+        driver = new HtmlUnitDriver();
         driver.get(this.getURL());
 
     }
@@ -90,13 +99,16 @@ public class Parser {
 
     public void clickOnReport()
     {
-        driver.findElement(By.xpath(reportButtonXPATH)).click();
-        driver.findElement(By.xpath(reportLookButtonXPATH)).click();
-        this.traffic.add(driver.findElement(By.xpath(reportIncomingMBXPATH)).getText());
+        (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportButtonXPATH))).click();
+
+        (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportLookButtonXPATH))).click();
+        this.traffic.add((new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportLookButtonXPATH))).getText());
     }
     public void clickOnfuturePay()
     {
-        //driver.get("http://vpn.unn.ru/stat/?module=promised_payment");
         driver.findElement(By.xpath(futurePaidButtonXPATH)).click();
         if (driver.getPageSource().contains("Внести платеж"))
             isEnableFuturePay.add("yes");
