@@ -1,7 +1,7 @@
 package parser;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
+
 import static junit.framework.TestCase.assertEquals;
 
 /**
@@ -19,33 +19,34 @@ public class testParser {
     public void checkTitleOnVPN()
     {
         Parser parser = new Parser();
-        parser.setSetting();
+        parser.setSettingHTML();
         parser.clickOnStat();
-        assertEquals("http://vpn.unn.ru/stat/",parser.driver.getCurrentUrl());
+        assertEquals("http://vpn.unn.ru/stat/", parser.driver.getCurrentUrl());
         parser.closeDriver();
     }
     @Test
     public void logInOnVPN1170()
     {
         Parser parser = new Parser();
-        parser.setSetting();
+        parser.setSettingHTML();
         parser.clickOnStat();
-        parser.writeLogin(parser.getLogin1());
-        parser.writePassword(parser.getPassword1());
+        parser.writeLogin(parser.getLogin_i(0));
+        parser.writePassword(parser.getPassword_i(0));
         parser.clickLogin();
-        assertEquals("Общие",parser.driver.findElement(By.xpath(parser.mainMenuTextXPATH)).getText());
+        assertEquals("Общие", parser.getTextByXPATH(parser.mainMenuTextXPATH));
         parser.closeDriver();
     }
     @Test
     public void logInNotRight()
     {
         Parser parser = new Parser();
-        parser.setSetting();
+        parser.setSettingHTML();
         parser.clickOnStat();
         parser.writeLogin("1");
         parser.writePassword("1");
         parser.clickLogin();
-        assertEquals("Вход в личный кабинет",parser.driver.findElement(By.xpath(parser.mainMenuTextXPATH)).getText());
+        assertEquals("Вход в личный кабинет", parser.getTextByXPATH(parser.mainMenuTextXPATH));
+        System.out.println("неверный логин/пароль");
         parser.closeDriver();
     }
 
@@ -53,10 +54,10 @@ public class testParser {
     public void checkMoneyOn()
     {
         Parser parser = new Parser();
-        parser.setSetting();
+        parser.setSettingHTML();
         parser.clickOnStat();
-        parser.writeLogin(parser.getLogin1());
-        parser.writePassword(parser.getPassword1());
+        parser.writeLogin(parser.getLogin_i(0));
+        parser.writePassword(parser.getPassword_i(0));
         parser.clickLogin();
         parser.viewMoney();
         assertEquals("-101.18",parser.money.get(0));
@@ -66,10 +67,11 @@ public class testParser {
     public void checkTrafficOn()
     {
         Parser parser = new Parser();
-        parser.setSetting();
+        parser.setSettingHTML();
+        //parser.setSetting();
         parser.clickOnStat();
-        parser.writeLogin(parser.getLogin1());
-        parser.writePassword(parser.getPassword1());
+        parser.writeLogin(parser.getLogin_i(0));
+        parser.writePassword(parser.getPassword_i(0));
         parser.clickLogin();
         parser.clickOnReport();
         assertEquals("46211.028562546",parser.traffic.get(0));
@@ -77,13 +79,13 @@ public class testParser {
     }
 
     @Test
-    public void isOnPageISNO()
+    public void isOnPageISNo()
     {
         Parser parser = new Parser();
-        parser.setSetting();
+        parser.setSettingHTML();
         parser.clickOnStat();
-        parser.writeLogin(parser.getLogin1());
-        parser.writePassword(parser.getPassword1());
+        parser.writeLogin(parser.getLogin_i(0));
+        parser.writePassword(parser.getPassword_i(0));
         parser.clickLogin();
         parser.clickOnfuturePay();
         assertEquals("no",parser.isEnableFuturePay.get(0));
@@ -94,10 +96,10 @@ public class testParser {
     public void isOnPageISYES()
     {
         Parser parser = new Parser();
-        parser.setSetting();
+        parser.setSettingHTML();
         parser.clickOnStat();
-        parser.writeLogin(parser.getLogin3());
-        parser.writePassword(parser.getPassword3());
+        parser.writeLogin(parser.getLogin_i(2));
+        parser.writePassword(parser.getPassword_i(2));
         parser.clickLogin();
         parser.clickOnfuturePay();
         assertEquals("yes",parser.isEnableFuturePay.get(0));
@@ -108,74 +110,27 @@ public class testParser {
     public void writeResults()
     {
         Parser parser = new Parser();
-        parser.setSetting();
+        parser.setSettingHTML();
         parser.clickOnStat();
-        parser.writeLogin(parser.getLogin1());
-        parser.writePassword(parser.getPassword1());
-        parser.clickLogin();
-        parser.viewMoney();
-        parser.clickOnReport();
-        parser.clickOnObshee();
-        parser.clickOnfuturePay();
-        parser.clickOnExit();
 
-        parser.writeLogin(parser.getLogin2());
-        parser.writePassword(parser.getPassword2());
-        parser.clickLogin();
-        parser.viewMoney();
-        parser.clickOnReport();
-        parser.clickOnObshee();
-        parser.clickOnfuturePay();
-        parser.clickOnExit();
-
-
-        parser.writeLogin(parser.getLogin3());
-        parser.writePassword(parser.getPassword3());
-        parser.clickLogin();
-        parser.viewMoney();
-        parser.clickOnReport();
-        parser.clickOnObshee();
-        parser.clickOnfuturePay();
-        parser.clickOnExit();
-
-        parser.writeLogin(parser.getLogin4());
-        parser.writePassword(parser.getPassword4());
-        parser.clickLogin();
-        parser.viewMoney();
-        parser.clickOnReport();
-        parser.clickOnObshee();
-        parser.clickOnfuturePay();
-        parser.clickOnExit();
-
-
-        parser.writeLogin(parser.getLogin5());
-        parser.writePassword(parser.getPassword5());
-        parser.clickLogin();
-        parser.viewMoney();
-        parser.clickOnReport();
-        parser.clickOnObshee();
-        parser.clickOnfuturePay();
-        parser.clickOnExit();
-
+        for (int i=0; i<5;i++)
+        {
+            parser.writeLogin(parser.getLogin_i(i));
+            parser.writePassword(parser.getPassword_i(i));
+            parser.clickLogin();
+            parser.viewMoney();
+            parser.clickOnReport();
+            parser.clickOnObshee();
+            parser.clickOnfuturePay();
+            parser.clickOnExit();
+        }
         parser.closeDriver();
-        System.out.print(parser.getLogin1()+"    Денег:"+parser.money.get(0)+
-                "      Трафика:"+parser.traffic.get(0)+"   Есть обещанный?:"+parser.isEnableFuturePay.get(0));
+        for (int i=0; i<5;i++)
+        {
+        System.out.print(parser.getLogin_i(i)+"    Денег:"+parser.money.get(i)+
+                "      Трафика:"+parser.traffic.get(i)+"   Есть обещанный?:"+parser.isEnableFuturePay.get(i));
         System.out.println();
 
-        System.out.print(parser.getLogin2()+"    Денег:"+parser.money.get(1)+
-                "      Трафика:"+parser.traffic.get(1)+"   Есть обещанный?:"+parser.isEnableFuturePay.get(1));
-        System.out.println();
-
-        System.out.print(parser.getLogin3()+"    Денег:"+parser.money.get(2)+
-                "      Трафика:"+parser.traffic.get(2)+"   Есть обещанный?:"+parser.isEnableFuturePay.get(2));
-        System.out.println();
-
-        System.out.print(parser.getLogin4()+"    Денег:"+parser.money.get(3)+
-                "      Трафика:"+parser.traffic.get(3)+"   Есть обещанный?:"+parser.isEnableFuturePay.get(3));
-        System.out.println();
-
-        System.out.print(parser.getLogin5()+"    Денег:"+parser.money.get(4)+
-                "      Трафика:"+parser.traffic.get(4)+"   Есть обещанный?:"+parser.isEnableFuturePay.get(4));
-        System.out.println();
+        }
     }
 }
