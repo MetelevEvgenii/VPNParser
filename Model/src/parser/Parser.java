@@ -28,12 +28,14 @@ public class Parser {
 
     private String[] logins={"u-1170","u-2043","u-0953","u-1683","u-1727"};
     private String[] passwords={"fawiti","fu6mema","wu3kaco","goru6cu","zeka6ta"};
-
+    //private String curLogin;
     public ArrayList<String> money= new ArrayList<>();
     public ArrayList<String> traffic= new ArrayList<>();
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
     public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
+
+    public CurLogin curLogin = new CurLogin();
 
     public String getURL() {
         return adressURL;
@@ -143,8 +145,34 @@ public class Parser {
 
 
     public void sendMessageAPIVK(String textMessage) throws IOException {
-        VkApi vk = new VkApi("5953885","b8f887f38c8a9458a9c4ea4d267d0e61536bb1b272ea9a8d14ff6126ce3310651c8852806bd7d5d3cfe50&expires_in=86400&user_id=24665764");
+        VkApi vk = new VkApi("5953885","618598d6fed704eb457f0de8535a0cebc5033c39f1cb31116ab182cd9149f396533d6994e528e2772b6db&expires_in=86400&user_id=24665764");
         vk.sendMessage(textMessage,"24665764");
     }
 
+    public void setCurLogin()
+    {
+       // this.viewMoney();
+        for (int i =0;i<5;i++)
+            if (Double.parseDouble(money.get(i)) > 0)
+            {
+                curLogin.setLogin(logins[i]);
+                curLogin.setIndex(i);
+            }
+    }
+    //for test
+    public void setForcedtCurLogin()
+    {
+                curLogin.setLogin(logins[0]);
+                curLogin.setIndex(0);
+
+    }
+
+    public void noticeAboutOverMoney() throws IOException {
+        if (Double.parseDouble(money.get(curLogin.getIndex()))<15)
+        {
+            VkApi vk = new VkApi("5953885","618598d6fed704eb457f0de8535a0cebc5033c39f1cb31116ab182cd9149f396533d6994e528e2772b6db&expires_in=86400&user_id=24665764");
+vk.sendMessage("Заканчиваются деньги на "+curLogin.getLogin()+ " текущий счёт="+money.get(curLogin.getIndex()),"24665764");
+           // sendMessageAPIVK();
+        }
+    }
 }

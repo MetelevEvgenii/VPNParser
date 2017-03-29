@@ -2,9 +2,9 @@ package parser;
 
 import org.junit.Test;
 
-import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 
-import static junit.framework.TestCase.assertEquals;
+//import static junit.framework.TestCase.assertEquals;
 /**
  * Created by Evgenii on 25.03.2017.
  */
@@ -134,9 +134,73 @@ public class testParser {
 
         }
     }
-    @Test
+  /*  @Test
     public void parserSendMessageVK() throws IOException {
         Parser parser = new Parser();
         parser.sendMessageAPIVK("text");
     }
+    @Test
+    public void checkCurLogin()
+    {
+        Parser parser = new Parser();
+        parser.setSettingHTML();
+        parser.clickOnStat();
+
+        for (int i=0; i<5;i++)
+        {
+            parser.writeLogin(parser.getLogin_i(i));
+            parser.writePassword(parser.getPassword_i(i));
+            parser.clickLogin();
+            parser.viewMoney();
+            parser.clickOnReport();
+            parser.clickOnObshee();
+            parser.clickOnfuturePay();
+            parser.clickOnExit();
+        }
+        parser.closeDriver();
+        parser.setCurLogin();
+        assertEquals("u-1683",parser.curLogin.getLogin());
+    }
+    @Test
+    public void checkSendRightMessage() throws IOException {
+        Parser parser = new Parser();
+        parser.setSettingHTML();
+        parser.clickOnStat();
+
+        for (int i=0; i<5;i++)
+        {
+            parser.writeLogin(parser.getLogin_i(i));
+            parser.writePassword(parser.getPassword_i(i));
+            parser.clickLogin();
+            parser.viewMoney();
+            parser.clickOnReport();
+            parser.clickOnObshee();
+            parser.clickOnfuturePay();
+            parser.clickOnExit();
+        }
+        parser.closeDriver();
+        parser.setCurLogin();
+        parser.noticeAboutOverMoney();
+    }
+    @Test
+    public void checkSendRightMessageMoneyIsOver() throws IOException {
+        Parser parser = new Parser();
+        parser.setSettingHTML();
+        parser.clickOnStat();
+
+        for (int i=0; i<5;i++)
+        {
+            parser.writeLogin(parser.getLogin_i(i));
+            parser.writePassword(parser.getPassword_i(i));
+            parser.clickLogin();
+            parser.viewMoney();
+            parser.clickOnReport();
+            parser.clickOnObshee();
+            parser.clickOnfuturePay();
+            parser.clickOnExit();
+        }
+        parser.closeDriver();
+        parser.setForcedtCurLogin();
+        parser.noticeAboutOverMoney();
+    }*/
 }
