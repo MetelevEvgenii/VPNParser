@@ -2,8 +2,9 @@ package parser;
 
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertEquals;
+import java.io.IOException;
 
+import static junit.framework.TestCase.assertEquals;
 /**
  * Created by Evgenii on 25.03.2017.
  */
@@ -132,5 +133,10 @@ public class testParser {
         System.out.println();
 
         }
+    }
+    @Test
+    public void parserSendMessageVK() throws IOException {
+        Parser parser = new Parser();
+        parser.sendMessageAPIVK("text");
     }
 }

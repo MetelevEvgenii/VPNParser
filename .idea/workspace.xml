@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b4eb606-7e9e-4532-a90b-82e2385dc5f2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/parser/Parser.java" afterPath="$PROJECT_DIR$/src/parser/Parser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/parser/testParser.java" afterPath="$PROJECT_DIR$/test/parser/testParser.java" />
     </list>
@@ -29,46 +30,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="146" column="47" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3573#3574#0" expanded="true" />
-                <element signature="e#3610#3611#0" expanded="true" />
-                <element signature="e#3655#3656#0" expanded="true" />
-                <element signature="e#3695#3696#0" expanded="true" />
-                <element signature="e#4448#4449#0" expanded="true" />
-                <element signature="e#4501#4502#0" expanded="true" />
-                <element signature="e#4584#4585#0" expanded="true" />
-                <element signature="e#4899#4900#0" expanded="true" />
-                <element signature="e#4972#4973#0" expanded="true" />
-                <element signature="e#6549#6550#0" expanded="true" />
-                <element signature="e#6623#6624#0" expanded="true" />
-                <element signature="e#6679#6680#0" expanded="true" />
-                <element signature="e#6745#6746#0" expanded="true" />
-                <marker date="1490559346328" expanded="false" signature="5700:5711" ph=" { " />
-                <marker date="1490559346328" expanded="false" signature="5725:5731" ph=" }" />
-                <marker date="1490559346328" expanded="false" signature="5765:5776" ph=" { " />
-                <marker date="1490559346328" expanded="false" signature="5793:5799" ph=" }" />
-                <marker date="1490559346328" expanded="false" signature="5830:5841" ph=" { " />
-                <marker date="1490559346328" expanded="false" signature="5855:5861" ph=" }" />
-                <marker date="1490559346328" expanded="false" signature="6260:6271" ph=" { " />
-                <marker date="1490559346328" expanded="false" signature="6285:6291" ph=" }" />
-                <marker date="1490559346328" expanded="false" signature="6325:6336" ph=" { " />
-                <marker date="1490559346328" expanded="false" signature="6353:6359" ph=" }" />
+                <element signature="e#3828#3829#0" expanded="true" />
+                <element signature="e#3878#3879#0" expanded="true" />
+                <element signature="e#3926#3927#0" expanded="true" />
+                <element signature="e#4003#4004#0" expanded="true" />
+                <element signature="e#4056#4057#0" expanded="true" />
+                <element signature="e#4139#4140#0" expanded="true" />
+                <element signature="e#4388#4389#0" expanded="true" />
+                <element signature="e#4461#4462#0" expanded="true" />
+                <element signature="e#5123#5124#0" expanded="true" />
+                <element signature="e#5169#5170#0" expanded="true" />
+                <element signature="e#5205#5206#0" expanded="true" />
+                <element signature="e#5255#5256#0" expanded="true" />
+                <element signature="e#5316#5317#0" expanded="true" />
+                <element signature="e#5390#5391#0" expanded="true" />
+                <element signature="e#5446#5447#0" expanded="true" />
+                <element signature="e#5512#5513#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testParser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VkApi.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/parser/VkApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/parser/testParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1450">
-              <caret line="86" column="44" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
+            <state relative-caret-position="190">
+              <caret line="140" column="5" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,6 +83,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,6 +108,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/parser/VkApi.java" />
         <option value="$PROJECT_DIR$/src/parser/Parser.java" />
         <option value="$PROJECT_DIR$/test/parser/testParser.java" />
       </list>
@@ -131,6 +145,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -187,9 +203,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,59 +212,12 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.testParser">
-    <configuration default="false" name="testParser.logInOnVPN1170" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="VPNParser" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="parser" />
-      <option name="MAIN_CLASS_NAME" value="parser.testParser" />
-      <option name="METHOD_NAME" value="logInOnVPN1170" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="testParser.logInNotRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="VPNParser" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="parser" />
-      <option name="MAIN_CLASS_NAME" value="parser.testParser" />
-      <option name="METHOD_NAME" value="logInNotRight" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="parser" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.testParser.parserSendMessageVK">
     <configuration default="false" name="testParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -316,6 +283,58 @@
       <option name="PACKAGE_NAME" value="parser" />
       <option name="MAIN_CLASS_NAME" value="parser.testParser" />
       <option name="METHOD_NAME" value="isOnPageISNo" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="testParser.writeResults" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="VPNParser" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.testParser" />
+      <option name="METHOD_NAME" value="writeResults" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="testParser.parserSendMessageVK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="VPNParser" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.testParser" />
+      <option name="METHOD_NAME" value="parserSendMessageVK" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -574,19 +593,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.testParser.logInOnVPN1170" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.testParser.logInNotRight" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.testParser" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.testParser.checkTrafficOn" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.testParser.isOnPageISNo" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.testParser" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.testParser.checkTrafficOn" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.testParser.isOnPageISNo" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.testParser.writeResults" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.testParser.parserSendMessageVK" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.testParser" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.testParser.isOnPageISNo" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.testParser.checkTrafficOn" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.testParser.logInNotRight" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.testParser.logInOnVPN1170" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.testParser.parserSendMessageVK" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.testParser.writeResults" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.testParser" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.testParser.isOnPageISNo" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.testParser.checkTrafficOn" />
       </list>
     </recent_temporary>
   </component>
@@ -604,40 +623,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="testParser - 2017.03.26 at 23h 07m 37s.xml">
-      <configuration name="testParser" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 09h 08m 27s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser - 2017.03.26 at 23h 35m 48s.xml">
-      <configuration name="testParser" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 09h 12m 51s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser_checkTrafficOn - 2017.03.26 at 23h 06m 41s.xml">
-      <configuration name="testParser.checkTrafficOn" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 09h 15m 51s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser_isOnPageISNo - 2017.03.26 at 23h 09m 23s.xml">
-      <configuration name="testParser.isOnPageISNo" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 09h 21m 52s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser_isOnPageISNo - 2017.03.26 at 23h 12m 30s.xml">
-      <configuration name="testParser.isOnPageISNo" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 09h 29m 10s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser_isOnPageISNo - 2017.03.26 at 23h 16m 12s.xml">
-      <configuration name="testParser.isOnPageISNo" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 12h 00m 32s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser_isOnPageISNo - 2017.03.26 at 23h 19m 10s.xml">
-      <configuration name="testParser.isOnPageISNo" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 12h 49m 31s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser_isOnPageISNo - 2017.03.26 at 23h 20m 30s.xml">
-      <configuration name="testParser.isOnPageISNo" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 13h 01m 19s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser_isOnPageISNo - 2017.03.26 at 23h 29m 51s.xml">
-      <configuration name="testParser.isOnPageISNo" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 13h 19m 42s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="testParser_isOnPageISNo - 2017.03.26 at 23h 34m 51s.xml">
-      <configuration name="testParser.isOnPageISNo" configurationId="JUnit" />
+    <history-entry file="testParser_parserSendMessageVK - 2017.03.29 at 13h 20m 42s.xml">
+      <configuration name="testParser.parserSendMessageVK" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -655,7 +674,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37795275" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35748032" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -679,14 +698,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="39" />
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
-        <watch expression="this.getTextWithWaitingByXPATH(&quot;futurePaidButtonXPATH&quot;)" language="JAVA" />
-        <watch expression="this.getTextByXPATH(&quot;/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/form[@class='form']/table/tbody/tr/td/table[@class='layout-cover']/tbody/tr/td/table[@class='layout']/tbody/tr[2]/td[@class='layout-cell'][2]/input[@class='forminput']&quot;)" language="JAVA" />
-        <watch expression="driver.getCurrentUrl()" language="JAVA" />
-        <watch expression="driver.getTitle()" language="JAVA" />
+        <watch expression="driverVK.findElement(By.xpath(sendMessageBTnVKXPATH)).getText()" language="JAVA" />
+        <watch expression="driverVK.getCurrentUrl()" language="JAVA" />
+        <watch expression="driverVK.findElement(By.xpath(textMessageVKXPATH)).getText()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -697,33 +715,62 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3828#3829#0" expanded="true" />
+            <element signature="e#3878#3879#0" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4056#4057#0" expanded="true" />
+            <element signature="e#4139#4140#0" expanded="true" />
+            <element signature="e#4388#4389#0" expanded="true" />
+            <element signature="e#4461#4462#0" expanded="true" />
+            <element signature="e#5123#5124#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5205#5206#0" expanded="true" />
+            <element signature="e#5255#5256#0" expanded="true" />
+            <element signature="e#5316#5317#0" expanded="true" />
+            <element signature="e#5390#5391#0" expanded="true" />
+            <element signature="e#5446#5447#0" expanded="true" />
+            <element signature="e#5512#5513#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/parser/testParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2482">
           <caret line="146" column="17" selection-start-line="146" selection-start-column="11" selection-end-line="146" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3573#3574#0" expanded="true" />
-            <element signature="e#3610#3611#0" expanded="true" />
-            <element signature="e#3655#3656#0" expanded="true" />
-            <element signature="e#3695#3696#0" expanded="true" />
-            <element signature="e#4448#4449#0" expanded="true" />
-            <element signature="e#4501#4502#0" expanded="true" />
-            <element signature="e#4584#4585#0" expanded="true" />
-            <element signature="e#4899#4900#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#6549#6550#0" expanded="true" />
-            <element signature="e#6623#6624#0" expanded="true" />
-            <element signature="e#6679#6680#0" expanded="true" />
-            <element signature="e#6745#6746#0" expanded="true" />
-            <marker date="1490559346328" expanded="false" signature="5700:5711" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="5725:5731" ph=" }" />
-            <marker date="1490559346328" expanded="false" signature="5765:5776" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="5793:5799" ph=" }" />
-            <marker date="1490559346328" expanded="false" signature="5830:5841" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="5855:5861" ph=" }" />
-            <marker date="1490559346328" expanded="false" signature="6260:6271" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="6285:6291" ph=" }" />
-            <marker date="1490559346328" expanded="false" signature="6325:6336" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="6353:6359" ph=" }" />
+            <element signature="e#3828#3829#0" expanded="true" />
+            <element signature="e#3878#3879#0" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4056#4057#0" expanded="true" />
+            <element signature="e#4139#4140#0" expanded="true" />
+            <element signature="e#4388#4389#0" expanded="true" />
+            <element signature="e#4461#4462#0" expanded="true" />
+            <element signature="e#5123#5124#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5205#5206#0" expanded="true" />
+            <element signature="e#5255#5256#0" expanded="true" />
+            <element signature="e#5316#5317#0" expanded="true" />
+            <element signature="e#5390#5391#0" expanded="true" />
+            <element signature="e#5446#5447#0" expanded="true" />
+            <element signature="e#5512#5513#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -749,6 +796,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="319" column="0" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/selenium-server-standalone-3.3.1.jar!/org/openqa/selenium/support/ui/WebDriverWait.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -764,85 +840,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/statements/InvokeMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/selenium-server-standalone-3.3.1.jar!/org/openqa/selenium/support/ui/WebDriverWait.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+    <entry file="file://$PROJECT_DIR$/VkApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/VkApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3573#3574#0" expanded="true" />
-            <element signature="e#3610#3611#0" expanded="true" />
-            <element signature="e#3655#3656#0" expanded="true" />
-            <element signature="e#3695#3696#0" expanded="true" />
-            <element signature="e#4448#4449#0" expanded="true" />
-            <element signature="e#4501#4502#0" expanded="true" />
-            <element signature="e#4584#4585#0" expanded="true" />
-            <element signature="e#4899#4900#0" expanded="true" />
-            <element signature="e#4972#4973#0" expanded="true" />
-            <element signature="e#6549#6550#0" expanded="true" />
-            <element signature="e#6623#6624#0" expanded="true" />
-            <element signature="e#6679#6680#0" expanded="true" />
-            <element signature="e#6745#6746#0" expanded="true" />
-            <marker date="1490559346328" expanded="false" signature="5700:5711" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="5725:5731" ph=" }" />
-            <marker date="1490559346328" expanded="false" signature="5765:5776" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="5793:5799" ph=" }" />
-            <marker date="1490559346328" expanded="false" signature="5830:5841" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="5855:5861" ph=" }" />
-            <marker date="1490559346328" expanded="false" signature="6260:6271" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="6285:6291" ph=" }" />
-            <marker date="1490559346328" expanded="false" signature="6325:6336" ph=" { " />
-            <marker date="1490559346328" expanded="false" signature="6353:6359" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/parser/testParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="86" column="44" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
+        <state relative-caret-position="190">
+          <caret line="140" column="5" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="146" column="47" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3828#3829#0" expanded="true" />
+            <element signature="e#3878#3879#0" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4056#4057#0" expanded="true" />
+            <element signature="e#4139#4140#0" expanded="true" />
+            <element signature="e#4388#4389#0" expanded="true" />
+            <element signature="e#4461#4462#0" expanded="true" />
+            <element signature="e#5123#5124#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5205#5206#0" expanded="true" />
+            <element signature="e#5255#5256#0" expanded="true" />
+            <element signature="e#5316#5317#0" expanded="true" />
+            <element signature="e#5390#5391#0" expanded="true" />
+            <element signature="e#5446#5447#0" expanded="true" />
+            <element signature="e#5512#5513#0" expanded="true" />
           </folding>
         </state>
       </provider>

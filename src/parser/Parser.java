@@ -5,6 +5,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -28,28 +29,12 @@ public class Parser {
     private String[] logins={"u-1170","u-2043","u-0953","u-1683","u-1727"};
     private String[] passwords={"fawiti","fu6mema","wu3kaco","goru6cu","zeka6ta"};
 
-
-
-   /* private String login1 = "u-1170";
-    private String password1 = "fawiti";
-
-    private String login2 = "u-2043";
-    private String password2 = "fu6mema";
-
-    private String login3 = "u-0953";
-    private String password3 = "wu3kaco";
-
-    private String login4 = "u-1683";
-    private String password4 = "goru6cu";
-
-    private String login5 = "u-1727";
-    private String password5 = "zeka6ta";*/
-
     public ArrayList<String> money= new ArrayList<>();
     public ArrayList<String> traffic= new ArrayList<>();
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
     public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
+
     public String getURL() {
         return adressURL;
     }
@@ -62,6 +47,7 @@ public class Parser {
     {
         return this.passwords[i];
     }
+
     public void setSettingHTML()
     {
         driver = new HtmlUnitDriver();
@@ -79,7 +65,6 @@ public class Parser {
     }*/
     public void clickOnStat()
     {
-        //driver.findElement(By.xpath(StatButtonXPATH)).click();
         this.clickByXPATH(StatButtonXPATH);
     }
 
@@ -94,7 +79,6 @@ public class Parser {
 
     public void clickLogin()
     {
-        //driver.findElement(By.xpath(loginButtonXPATH)).click();
         this.clickWithWaitingByXPATH(loginButtonXPATH);
         if (this.getTextWithWaitingByXPATH(mainMenuTextXPATH).equals("Вход в личный кабинет"))
             return;
@@ -115,7 +99,6 @@ public class Parser {
     }
     public void clickOnfuturePay()
     {
-        //driver.findElement(By.xpath(futurePaidButtonXPATH)).click();
         this.clickByXPATH(futurePaidButtonXPATH);
         if (driver.getPageSource().contains("Внести платеж"))
             isEnableFuturePay.add("yes");
@@ -129,47 +112,16 @@ public class Parser {
         driver.quit();
     }
 
-  /*  public String getLogin2() {
-        return login2;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public String getLogin3() {
-        return login3;
-    }
-
-    public String getPassword3() {
-        return password3;
-    }*/
     public void clickOnObshee()
     {
-        //driver.findElement(By.xpath(obsheeXPATH)).click();
         this.clickByXPATH(obsheeXPATH);
     }
     public void clickOnExit()
     {
-        //driver.findElement(By.xpath(exitButtonXPATH)).click();
         this.clickByXPATH(exitButtonXPATH);
     }
 
-  /*  public String getLogin4() {
-        return login4;
-    }
 
-    public String getPassword4() {
-        return password4;
-    }
-
-    public String getLogin5() {
-        return login5;
-    }
-
-    public String getPassword5() {
-        return password5;
-    }*/
     public String getTextByXPATH(String xpathString)
     {
         return driver.findElement(By.xpath(xpathString)).getText();
@@ -188,4 +140,11 @@ public class Parser {
     {
         return driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathString))).getText();
     }
+
+
+    public void sendMessageAPIVK(String textMessage) throws IOException {
+        VkApi vk = new VkApi("5953885","b8f887f38c8a9458a9c4ea4d267d0e61536bb1b272ea9a8d14ff6126ce3310651c8852806bd7d5d3cfe50&expires_in=86400&user_id=24665764");
+        vk.sendMessage(textMessage,"24665764");
+    }
+
 }
