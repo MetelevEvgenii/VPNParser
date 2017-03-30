@@ -52,6 +52,7 @@ public class Parser {
 
     public void setSettingHTML()
     {
+        java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(java.util.logging.Level.OFF);
         driver = new HtmlUnitDriver();
         driver.setJavascriptEnabled(true);
         driver.get(this.getURL());
