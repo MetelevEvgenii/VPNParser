@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VPNParser:jar">
+    <output-path>$PROJECT_DIR$/Model/out/artifacts/VPNParser_jar</output-path>
+    <root id="archive" name="VPNParser.jar">
+      <element id="module-output" name="Model" />
+      <element id="module-output" name="View" />
+      <element id="extracted-dir" path="C:/Program Files/Java/selenium-server-standalone-3.3.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

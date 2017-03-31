@@ -5,6 +5,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -27,29 +28,15 @@ public class Parser {
 
     private String[] logins={"u-1170","u-2043","u-0953","u-1683","u-1727"};
     private String[] passwords={"fawiti","fu6mema","wu3kaco","goru6cu","zeka6ta"};
-
-
-
-   /* private String login1 = "u-1170";
-    private String password1 = "fawiti";
-
-    private String login2 = "u-2043";
-    private String password2 = "fu6mema";
-
-    private String login3 = "u-0953";
-    private String password3 = "wu3kaco";
-
-    private String login4 = "u-1683";
-    private String password4 = "goru6cu";
-
-    private String login5 = "u-1727";
-    private String password5 = "zeka6ta";*/
-
+    //private String curLogin;
     public ArrayList<String> money= new ArrayList<>();
     public ArrayList<String> traffic= new ArrayList<>();
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
     public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
+
+    public CurLogin curLogin = new CurLogin();
+
     public String getURL() {
         return adressURL;
     }
@@ -62,8 +49,10 @@ public class Parser {
     {
         return this.passwords[i];
     }
+
     public void setSettingHTML()
     {
+        java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(java.util.logging.Level.OFF);
         driver = new HtmlUnitDriver();
         driver.setJavascriptEnabled(true);
         driver.get(this.getURL());
@@ -79,7 +68,6 @@ public class Parser {
     }*/
     public void clickOnStat()
     {
-        //driver.findElement(By.xpath(StatButtonXPATH)).click();
         this.clickByXPATH(StatButtonXPATH);
     }
 
@@ -94,7 +82,6 @@ public class Parser {
 
     public void clickLogin()
     {
-        //driver.findElement(By.xpath(loginButtonXPATH)).click();
         this.clickWithWaitingByXPATH(loginButtonXPATH);
         if (this.getTextWithWaitingByXPATH(mainMenuTextXPATH).equals("Вход в личный кабинет"))
             return;
@@ -115,7 +102,6 @@ public class Parser {
     }
     public void clickOnfuturePay()
     {
-        //driver.findElement(By.xpath(futurePaidButtonXPATH)).click();
         this.clickByXPATH(futurePaidButtonXPATH);
         if (driver.getPageSource().contains("Внести платеж"))
             isEnableFuturePay.add("yes");
@@ -129,47 +115,16 @@ public class Parser {
         driver.quit();
     }
 
-  /*  public String getLogin2() {
-        return login2;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public String getLogin3() {
-        return login3;
-    }
-
-    public String getPassword3() {
-        return password3;
-    }*/
     public void clickOnObshee()
     {
-        //driver.findElement(By.xpath(obsheeXPATH)).click();
         this.clickByXPATH(obsheeXPATH);
     }
     public void clickOnExit()
     {
-        //driver.findElement(By.xpath(exitButtonXPATH)).click();
         this.clickByXPATH(exitButtonXPATH);
     }
 
-  /*  public String getLogin4() {
-        return login4;
-    }
 
-    public String getPassword4() {
-        return password4;
-    }
-
-    public String getLogin5() {
-        return login5;
-    }
-
-    public String getPassword5() {
-        return password5;
-    }*/
     public String getTextByXPATH(String xpathString)
     {
         return driver.findElement(By.xpath(xpathString)).getText();
@@ -187,5 +142,38 @@ public class Parser {
     public String getTextWithWaitingByXPATH(String xpathString)
     {
         return driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathString))).getText();
+    }
+
+
+    public void sendMessageAPIVK(String textMessage) throws IOException {
+        VkApi vk = new VkApi("5953885","618598d6fed704eb457f0de8535a0cebc5033c39f1cb31116ab182cd9149f396533d6994e528e2772b6db&expires_in=86400&user_id=24665764");
+        vk.sendMessage(textMessage,"24665764");
+    }
+
+    public void setCurLogin()
+    {
+       // this.viewMoney();
+        for (int i =0;i<5;i++)
+            if (Double.parseDouble(money.get(i)) > 0)
+            {
+                curLogin.setLogin(logins[i]);
+                curLogin.setIndex(i);
+            }
+    }
+    //for test
+    public void setForcedtCurLogin()
+    {
+                curLogin.setLogin(logins[0]);
+                curLogin.setIndex(0);
+
+    }
+
+    public void noticeAboutOverMoney() throws IOException {
+        if (Double.parseDouble(money.get(curLogin.getIndex()))<15)
+        {
+            VkApi vk = new VkApi("5953885","618598d6fed704eb457f0de8535a0cebc5033c39f1cb31116ab182cd9149f396533d6994e528e2772b6db&expires_in=86400&user_id=24665764");
+vk.sendMessage("Заканчиваются деньги на "+curLogin.getLogin()+ " текущий счёт="+money.get(curLogin.getIndex()),"24665764");
+           // sendMessageAPIVK();
+        }
     }
 }
