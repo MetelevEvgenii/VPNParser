@@ -31,10 +31,11 @@ public class parserForm {
         view.setLayout(new BorderLayout(0, 0));
         view.setPreferredSize(new Dimension(HEIGHTMAINWINDOW, WEIDTHTMAINWINDOW));
         view.add(buttonView, BorderLayout.NORTH);
-        view.add(resultsView);
         buttonView.add(refreshButton);
-        resultsView.add(listResults);
         refreshButton.setText("Refresh");
+        listResults.setForeground(Color.GREEN);
+        view.add(resultsView);
+        resultsView.add(listResults);
 
         for (int i=0;i<5;i++){
 
@@ -48,9 +49,18 @@ public class parserForm {
             backBind();
             for (int i=0; i<5;i++)
             {
-                listModel.addElement(parser.getLogin_i(i)+"    Денег: "+parser.money.get(i)+
+                listResults.setForeground(Color.GREEN);
+                //listResults.setForeground(Color.BLACK);
+                if (i==parser.curLogin.getIndex())
+                {
+                    listResults.setForeground(Color.BLACK);
+                }
+                //listResults.repaint();
+                    listModel.addElement(parser.getLogin_i(i)+"    Денег: "+parser.money.get(i)+
                         "      Трафика: "+parser.traffic.get(i)+"   Есть обещанный?: "+parser.isEnableFuturePay.get(i));
+
             }
+
             frame.pack();
 
         });
@@ -72,6 +82,7 @@ public class parserForm {
      //   parser.setSetting();
         parser.setSettingHTML();
         parser.clickOnStat();
+
         for (int i=0; i<5;i++)
         {
             parser.writeLogin(parser.getLogin_i(i));
@@ -83,6 +94,7 @@ public class parserForm {
             parser.clickOnfuturePay();
             parser.clickOnExit();
         }
+        parser.setCurLogin();
         parser.closeDriver();
     }
 }

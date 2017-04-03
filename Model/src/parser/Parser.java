@@ -168,7 +168,7 @@ public class Parser {
             }
     }
     //for test
-    public void setForcedtCurLogin()
+    public void setForcedtCurLogin()//for tests
     {
                 curLogin.setLogin(logins[0]);
                 curLogin.setIndex(0);
