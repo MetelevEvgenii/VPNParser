@@ -69,6 +69,7 @@ public class parserForm {
 
     private void backBind() {//берёт
         parser = new Parser();
+     //   parser.setSetting();
         parser.setSettingHTML();
         parser.clickOnStat();
         for (int i=0; i<5;i++)

@@ -1,6 +1,8 @@
 package parser;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -34,7 +36,7 @@ public class Parser {
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
     public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
-
+    public WebDriver driver2;
     public CurLogin curLogin = new CurLogin();
 
     public String getURL() {
@@ -59,13 +61,13 @@ public class Parser {
         driverWait = new WebDriverWait(driver,10);
 
     }
-   /* public void setSetting()
+    public void setSetting()
     {
         System.setProperty("webdriver.chrome.driver", "/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
+        driver2 = new ChromeDriver();
         driver.get(this.getURL());
         driverWait = new WebDriverWait(driver,10);
-    }*/
+    }
     public void clickOnStat()
     {
         this.clickByXPATH(StatButtonXPATH);
@@ -97,8 +99,13 @@ public class Parser {
     {
         this.clickWithWaitingByXPATH(reportButtonXPATH);
         this.clickWithWaitingByXPATH(reportLookButtonXPATH);
-        this.traffic.add(this.driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportIncomingMBXPATH))).getText());
-
+        if (driver.findElement(By.className("work-area")).getText().contains("Нет данных"))
+        {
+            this.traffic.add("Чистый");
+        }
+       else {
+            this.traffic.add(this.driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(reportIncomingMBXPATH))).getText());
+        }
     }
     public void clickOnfuturePay()
     {
