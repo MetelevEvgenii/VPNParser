@@ -33,16 +33,9 @@ public class parserForm {
         view.add(buttonView, BorderLayout.NORTH);
         buttonView.add(refreshButton);
         refreshButton.setText("Refresh");
-        listResults.setForeground(Color.GREEN);
+       // listResults.setForeground(Color.GREEN);
         view.add(resultsView);
         resultsView.add(listResults);
-
-        for (int i=0;i<5;i++){
-
-        }
-
-
-
         JFrame frame = new JFrame("VPN");
 
         refreshButton.addActionListener(e -> {
@@ -50,19 +43,17 @@ public class parserForm {
             for (int i=0; i<5;i++)
             {
                 listResults.setForeground(Color.GREEN);
-                //listResults.setForeground(Color.BLACK);
-                if (i==parser.curLogin.getIndex())
+                //listResults.setForeground(Color.BLACK);parser.curLogin.getIndex()
+                String isCurent="";
+                if (parser.curLogin.getIndex()==i)
                 {
-                    listResults.setForeground(Color.BLACK);
+                    isCurent="!!! ";
                 }
                 //listResults.repaint();
-                    listModel.addElement(parser.getLogin_i(i)+"    Денег: "+parser.money.get(i)+
+                    listModel.addElement(isCurent + parser.getLogin_i(i)+"    Денег: "+parser.money.get(i)+
                         "      Трафика: "+parser.traffic.get(i)+"   Есть обещанный?: "+parser.isEnableFuturePay.get(i));
-
+                frame.pack();
             }
-
-            frame.pack();
-
         });
 
         frame.setLocation(PISITIONX, PISITIONY);

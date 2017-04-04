@@ -1,8 +1,6 @@
 package parser;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,17 +24,20 @@ public class Parser {
     public String futurePaidButtonXPATH = "/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/table[1]/tbody/tr/td[@class='submenu-area']/span[@class='submenu-inact']/a";
     public String obsheeXPATH =  "/html/body[@class='body']/table/tbody/tr/td[@class='menu-area']/div[@class='mainmenu-inact'][1]/a";
     public String exitButtonXPATH =  "/html/body[@class='body']/table/tbody/tr/td[@class='menu-area']/div[@class='mainmenu-inact'][3]/a/b";
+    public String dateOfPaymantXPATH = "/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/table[@class='utm-table-cover']/tbody/tr/td/table[@class='utm-table']/tbody/tr[2]/td[@class='utm-cell'][1]";
+    public String btnDateOfPaymant = "/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/table[1]/tbody/tr/td[@class='submenu-area']/span[@class='submenu-inact'][1]/a";
+    public String showPaymants = "/html/body[@class='body']/table/tbody/tr/td[@class='work-area']/form[@class='form']/table/tbody/tr/td/table[@class='layout-cover']/tbody/tr/td/table[@class='layout']/tbody/tr[1]/td[@class='layout-cell'][5]/input";
     private String adressURL = "http://vpn.unn.ru";
 
     private String[] logins={"u-1170","u-2043","u-0953","u-1683","u-1727"};
     private String[] passwords={"fawiti","fu6mema","wu3kaco","goru6cu","zeka6ta"};
-    //private String curLogin;
+
     public ArrayList<String> money= new ArrayList<>();
     public ArrayList<String> traffic= new ArrayList<>();
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
     public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
-    public WebDriver driver2;
+    public ArrayList<String> datePayment;
     public CurLogin curLogin = new CurLogin();
 
     public String getURL() {
@@ -61,13 +62,13 @@ public class Parser {
         driverWait = new WebDriverWait(driver,10);
 
     }
-    public void setSetting()
+    /*public void setSetting()
     {
         System.setProperty("webdriver.chrome.driver", "/chromedriver_win32/chromedriver.exe");
         driver2 = new ChromeDriver();
         driver.get(this.getURL());
         driverWait = new WebDriverWait(driver,10);
-    }
+    }*/
     public void clickOnStat()
     {
         this.clickByXPATH(StatButtonXPATH);
@@ -159,13 +160,23 @@ public class Parser {
 
     public void setCurLogin()
     {
-       // this.viewMoney();
-        for (int i =0;i<5;i++)
-            if (Double.parseDouble(money.get(i)) > 0)
-            {
-                curLogin.setLogin(logins[i]);
-                curLogin.setIndex(i);
-            }
+
+        myOwnDate[] date= new myOwnDate[5];
+        myOwnDate lastDate;
+        for(int i=0;i<5;i++)
+        {
+            this.clickWithWaitingByXPATH(reportButtonXPATH);
+            this.clickByXPATH(btnDateOfPaymant);
+            this.clickByXPATH(showPaymants);
+            String paymant = this.getTextByXPATH(dateOfPaymantXPATH);
+            date[i].compare(paymant);
+            if (date[i].result==1)
+                lastDate=date[i];
+        }
+
+        for (int j=1;j<5;j++)
+            date[j].compare(date[j+1])
+
     }
     //for test
     public void setForcedtCurLogin()//for tests
