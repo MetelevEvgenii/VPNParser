@@ -138,7 +138,7 @@ public class testParser {
     public void parserSendMessageVK() throws IOException {
         Parser parser = new Parser();
         parser.sendMessageAPIVK("text");
-    }
+    }*/
     @Test
     public void checkCurLogin()
     {
@@ -161,7 +161,7 @@ public class testParser {
         parser.setCurLogin();
         assertEquals("u-1683",parser.curLogin.getLogin());
     }
-    @Test
+ /*   @Test
     public void checkSendRightMessage() throws IOException {
         Parser parser = new Parser();
         parser.setSettingHTML();
@@ -181,8 +181,8 @@ public class testParser {
         parser.closeDriver();
         parser.setCurLogin();
         parser.noticeAboutOverMoney();
-    }
-    @Test
+    }*/
+   /* @Test
     public void checkSendRightMessageMoneyIsOver() throws IOException {
         Parser parser = new Parser();
         parser.setSettingHTML();

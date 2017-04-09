@@ -12,6 +12,7 @@ public class parserForm {
     private JButton refreshButton;
     private JPanel resultsView;
     private JList listResults;
+    private JLabel logText;
     Parser parser;
     private static final int PISITIONX = 500;
     private static final int PISITIONY = 200;
@@ -26,32 +27,37 @@ public class parserForm {
         buttonView = new JPanel();
         refreshButton = new JButton();
         resultsView = new JPanel();
+        logText = new JLabel();
         DefaultListModel listModel = new DefaultListModel();
         listResults = new JList(listModel);
         view.setLayout(new BorderLayout(0, 0));
         view.setPreferredSize(new Dimension(HEIGHTMAINWINDOW, WEIDTHTMAINWINDOW));
         view.add(buttonView, BorderLayout.NORTH);
         buttonView.add(refreshButton);
-        refreshButton.setText("Refresh");
-       // listResults.setForeground(Color.GREEN);
+        refreshButton.setText("Check");
         view.add(resultsView);
+        view.add(logText,BorderLayout.SOUTH);
         resultsView.add(listResults);
         JFrame frame = new JFrame("VPN");
 
         refreshButton.addActionListener(e -> {
+            listModel.removeAllElements();
+            refreshButton.setText("Refresh");
             backBind();
             for (int i=0; i<5;i++)
             {
-                listResults.setForeground(Color.GREEN);
-                //listResults.setForeground(Color.BLACK);parser.curLogin.getIndex()
                 String isCurent="";
                 if (parser.curLogin.getIndex()==i)
                 {
                     isCurent="!!! ";
                 }
-                //listResults.repaint();
-                    listModel.addElement(isCurent + parser.getLogin_i(i)+"    Денег: "+parser.money.get(i)+
-                        "      Трафика: "+parser.traffic.get(i)+"   Есть обещанный?: "+parser.isEnableFuturePay.get(i));
+
+                    listModel.addElement(isCurent +
+                            parser.getLogin_i(i)+
+                            "    Денег: "+parser.money.get(i)+
+                        "      Трафика: "+parser.traffic.get(i)+
+                            "   Есть обещанный?: " +
+                            parser.isEnableFuturePay.get(i));
                 frame.pack();
             }
         });
@@ -63,14 +69,8 @@ public class parserForm {
         frame.setVisible(true);
 
     }
-    private void bind() {//отдаёт
-
-
-    }
-
     private void backBind() {//берёт
         parser = new Parser();
-     //   parser.setSetting();
         parser.setSettingHTML();
         parser.clickOnStat();
 
@@ -85,7 +85,7 @@ public class parserForm {
             parser.clickOnfuturePay();
             parser.clickOnExit();
         }
-        parser.setCurLogin();
+        parser.curLogin.setIndex(parser.setCurLogin());
         parser.closeDriver();
     }
 }

@@ -6,12 +6,20 @@ import java.util.ArrayList;
  * Created by Evgenii on 03.04.2017.
  */
 public class myOwnDate {
-    public String date;
+    public String dateString;
     public ArrayList<Integer> format= new ArrayList<>();
     public int result=0;
 
+    public int curCount=0;
+
     public myOwnDate(String date) {
-        this.date=date;
+         dateString=date;
+        cutDateString(date);
+    }
+
+    public void setDate(String date)
+    {
+        dateString = date;
         cutDateString(date);
     }
 
@@ -24,6 +32,7 @@ public class myOwnDate {
             }
         }
     }
+
     public void compareDates(myOwnDate date2)
     {
         int day=0;
@@ -60,13 +69,23 @@ public class myOwnDate {
                 }
         }
     }
-    public void compare(String datatmp)
+   /* public void compare(String datatmp)
     {   myOwnDate data2= new myOwnDate(datatmp);
         compareDates(data2);
-    }
+    }*/
 
-    public void setDate(String date) {
-        this.date = date;
-        this.cutDateString(this.date);
+    public void sortDate(myOwnDate[] dates) {
+        myOwnDate lastdate = new myOwnDate("0");
+        myOwnDate tmpDate = new myOwnDate("0");
+        for (int i = 0; i < dates.length; i++) {            // i - номер прохода
+            for (int j = dates.length - 1; j > i; j--) {
+                dates[j - 1].compareDates(dates[j]);// внутренний цикл прохода
+                if (dates[j - 1].result == 1) {
+                    tmpDate=dates[j-1];
+                    dates[j-1]=dates[j];
+                    dates[j]=tmpDate;
+                }
+            }
+        }
     }
 }

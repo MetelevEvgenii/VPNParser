@@ -31,19 +31,17 @@ public class Parser {
 
     private String[] logins={"u-1170","u-2043","u-0953","u-1683","u-1727"};
     private String[] passwords={"fawiti","fu6mema","wu3kaco","goru6cu","zeka6ta"};
-
+    public final String nullString = "00/00/00 00:00";
     public ArrayList<String> money= new ArrayList<>();
     public ArrayList<String> traffic= new ArrayList<>();
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
     public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
-    public ArrayList<String> datePayment;
     public CurLogin curLogin = new CurLogin();
 
     public String getURL() {
         return adressURL;
     }
-
     public String getLogin_i(int i)
     {
         return this.logins[i];
@@ -55,7 +53,6 @@ public class Parser {
 
     public void setSettingHTML()
     {
-        java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(java.util.logging.Level.OFF);
         driver = new HtmlUnitDriver();
         driver.setJavascriptEnabled(true);
         driver.get(this.getURL());
@@ -158,40 +155,39 @@ public class Parser {
         vk.sendMessage(textMessage,"24665764");
     }
 
-    public void setCurLogin()
+    public int setCurLogin()
     {
-
-        myOwnDate[] date= new myOwnDate[5];
+        myOwnDate[] date= new myOwnDate[logins.length];
         myOwnDate lastDate;
         for(int i=0;i<5;i++)
         {
+            this.writeLogin(this.getLogin_i(i));
+            this.writePassword(this.getPassword_i(i));
+            this.clickLogin();
+
             this.clickWithWaitingByXPATH(reportButtonXPATH);
             this.clickByXPATH(btnDateOfPaymant);
             this.clickByXPATH(showPaymants);
-            String paymant = this.getTextByXPATH(dateOfPaymantXPATH);
-            date[i].compare(paymant);
-            if (date[i].result==1)
-                lastDate=date[i];
+            if (!driver.getPageSource().contains("Нет данных за выбранный период"))
+                {
+                    String paymant = this.getTextByXPATH(dateOfPaymantXPATH);
+                    date[i] = new myOwnDate(paymant);
+                }
+                else
+                {
+                    date[i] = new myOwnDate(nullString);// 00000000 если не существует платежа
+                }
+            this.clickOnExit();
         }
-
-        for (int j=1;j<5;j++)
-            date[j].compare(date[j+1])
-
+        date[0].sortDate(date);
+        lastDate = date[4];
+        return lastDate.curCount;
     }
     //for test
     public void setForcedtCurLogin()//for tests
     {
                 curLogin.setLogin(logins[0]);
                 curLogin.setIndex(0);
-
     }
 
-    public void noticeAboutOverMoney() throws IOException {
-        if (Double.parseDouble(money.get(curLogin.getIndex()))<15)
-        {
-            VkApi vk = new VkApi("5953885","618598d6fed704eb457f0de8535a0cebc5033c39f1cb31116ab182cd9149f396533d6994e528e2772b6db&expires_in=86400&user_id=24665764");
-vk.sendMessage("Заканчиваются деньги на "+curLogin.getLogin()+ " текущий счёт="+money.get(curLogin.getIndex()),"24665764");
-           // sendMessageAPIVK();
-        }
-    }
 }
