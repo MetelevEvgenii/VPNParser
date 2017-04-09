@@ -71,21 +71,26 @@ public class parserForm {
     }
     private void backBind() {//берёт
         parser = new Parser();
-        parser.setSettingHTML();
-        parser.clickOnStat();
+        try {
+            parser.setSettingHTML();
+            parser.clickOnStat();
 
-        for (int i=0; i<5;i++)
-        {
-            parser.writeLogin(parser.getLogin_i(i));
-            parser.writePassword(parser.getPassword_i(i));
-            parser.clickLogin();
-            parser.viewMoney();
-            parser.clickOnReport();
-            parser.clickOnObshee();
-            parser.clickOnfuturePay();
-            parser.clickOnExit();
+            for (int i = 0; i < 5; i++) {
+                parser.writeLogin(parser.getLogin_i(i));
+                parser.writePassword(parser.getPassword_i(i));
+                parser.clickLogin();
+                parser.viewMoney();
+                parser.clickOnReport();
+                parser.clickOnObshee();
+                parser.clickOnfuturePay();
+                parser.clickOnExit();
+            }
+            parser.curLogin.setIndex(parser.setCurLogin());
+            parser.closeDriver();
         }
-        parser.curLogin.setIndex(parser.setCurLogin());
-        parser.closeDriver();
+        catch (Exception e)
+        {
+            logText.setText("Проверь инет!");
+        }
     }
 }

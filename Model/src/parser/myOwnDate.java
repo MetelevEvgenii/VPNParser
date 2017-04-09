@@ -9,17 +9,10 @@ public class myOwnDate {
     public String dateString;
     public ArrayList<Integer> format= new ArrayList<>();
     public int result=0;
-
     public int curCount=0;
 
     public myOwnDate(String date) {
          dateString=date;
-        cutDateString(date);
-    }
-
-    public void setDate(String date)
-    {
-        dateString = date;
         cutDateString(date);
     }
 
@@ -69,10 +62,6 @@ public class myOwnDate {
                 }
         }
     }
-   /* public void compare(String datatmp)
-    {   myOwnDate data2= new myOwnDate(datatmp);
-        compareDates(data2);
-    }*/
 
     public void sortDate(myOwnDate[] dates) {
         myOwnDate lastdate = new myOwnDate("0");

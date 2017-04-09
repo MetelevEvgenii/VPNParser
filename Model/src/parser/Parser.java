@@ -5,7 +5,6 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -38,7 +37,6 @@ public class Parser {
     public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
     public CurLogin curLogin = new CurLogin();
-
     public String getURL() {
         return adressURL;
     }
@@ -73,7 +71,7 @@ public class Parser {
 
     public void writeLogin(String logIn)
     {
-        driver.findElement(By.xpath(loginFieldXPATH)).sendKeys(logIn);
+            driver.findElement(By.xpath(loginFieldXPATH)).sendKeys(logIn);
     }
     public void writePassword(String password)
     {
@@ -132,7 +130,7 @@ public class Parser {
 
     public String getTextByXPATH(String xpathString)
     {
-        return driver.findElement(By.xpath(xpathString)).getText();
+           return driver.findElement(By.xpath(xpathString)).getText();
     }
 
     public void clickByXPATH(String xpathString)
@@ -142,24 +140,18 @@ public class Parser {
 
     public void clickWithWaitingByXPATH(String xpathString)
     {
-        driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathString))).click();
+             driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathString))).click();
     }
     public String getTextWithWaitingByXPATH(String xpathString)
     {
         return driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathString))).getText();
     }
 
-
-    public void sendMessageAPIVK(String textMessage) throws IOException {
-        VkApi vk = new VkApi("5953885","618598d6fed704eb457f0de8535a0cebc5033c39f1cb31116ab182cd9149f396533d6994e528e2772b6db&expires_in=86400&user_id=24665764");
-        vk.sendMessage(textMessage,"24665764");
-    }
-
     public int setCurLogin()
     {
         myOwnDate[] date= new myOwnDate[logins.length];
         myOwnDate lastDate;
-        for(int i=0;i<5;i++)
+        for(int i=0;i<logins.length;i++)
         {
             this.writeLogin(this.getLogin_i(i));
             this.writePassword(this.getPassword_i(i));
@@ -180,9 +172,10 @@ public class Parser {
             this.clickOnExit();
         }
         date[0].sortDate(date);
-        lastDate = date[4];
+        lastDate = date[logins.length-1];//последний упорядоченый элемент
         return lastDate.curCount;
     }
+
     //for test
     public void setForcedtCurLogin()//for tests
     {
