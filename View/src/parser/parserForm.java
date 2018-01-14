@@ -14,6 +14,7 @@ public class parserForm {
     private JList listResults;
     private JLabel logText;
     Parser parser;
+    myOwnDate[] DATA;
     private static final int PISITIONX = 500;
     private static final int PISITIONY = 200;
     private static final int WEIDTHTMAINWINDOW = 180;
@@ -85,7 +86,7 @@ public class parserForm {
                 parser.clickOnfuturePay();
                 parser.clickOnExit();
             }
-            parser.curLogin.setIndex(parser.setCurLogin());
+            parser.curLogin.setIndex(parser.setCurLogin(DATA));
             parser.closeDriver();
         }
         catch (Exception e)

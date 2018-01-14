@@ -1,11 +1,13 @@
 package parser;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Evgenii on 25.03.2017.
@@ -34,6 +36,8 @@ public class Parser {
     public ArrayList<String> money= new ArrayList<>();
     public ArrayList<String> traffic= new ArrayList<>();
     public ArrayList<String> isEnableFuturePay= new ArrayList<>();
+
+    public ChromeDriver driver2;
     public HtmlUnitDriver driver;
     public WebDriverWait driverWait;
     public CurLogin curLogin = new CurLogin();
@@ -57,13 +61,13 @@ public class Parser {
         driverWait = new WebDriverWait(driver,10);
 
     }
-    /*public void setSetting()
+    public void setSetting()
     {
         System.setProperty("webdriver.chrome.driver", "/chromedriver_win32/chromedriver.exe");
         driver2 = new ChromeDriver();
-        driver.get(this.getURL());
+        driver2.get(this.getURL());
         driverWait = new WebDriverWait(driver,10);
-    }*/
+    }
     public void clickOnStat()
     {
         this.clickByXPATH(StatButtonXPATH);
@@ -147,10 +151,10 @@ public class Parser {
         return driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathString))).getText();
     }
 
-    public int setCurLogin()
+    public int setCurLogin(myOwnDate[] date)
     {
-        myOwnDate[] date= new myOwnDate[logins.length];
-        myOwnDate lastDate;
+        date = new myOwnDate[logins.length];
+
         for(int i=0;i<logins.length;i++)
         {
             this.writeLogin(this.getLogin_i(i));
@@ -171,16 +175,24 @@ public class Parser {
                 }
             this.clickOnExit();
         }
+        //sourceDate = date;
+        myOwnDate[] sourceDate = Arrays.copyOf(date,logins.length);
         date[0].sortDate(date);
-        lastDate = date[logins.length-1];//последний упорядоченый элемент
-        return lastDate.curCount;
+
+        for(int i=0;i<logins.length;i++)
+        {
+            if (sourceDate[i].dateString.contains(date[logins.length-1].dateString))
+                return i;
+        }
+
+        return 0;
     }
 
     //for test
-    public void setForcedtCurLogin()//for tests
+   /* public void setForcedtCurLogin()//for tests
     {
                 curLogin.setLogin(logins[0]);
                 curLogin.setIndex(0);
-    }
+    }*/
 
 }

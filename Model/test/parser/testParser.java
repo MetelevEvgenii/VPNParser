@@ -143,7 +143,7 @@ public class testParser {
     public void checkCurLogin()
     {
         Parser parser = new Parser();
-        parser.setSettingHTML();
+        parser.setSetting();
         parser.clickOnStat();
 
         for (int i=0; i<5;i++)
@@ -157,8 +157,8 @@ public class testParser {
             parser.clickOnfuturePay();
             parser.clickOnExit();
         }
+      //  parser.setCurLogin();
         parser.closeDriver();
-        parser.setCurLogin();
         assertEquals("u-1683",parser.curLogin.getLogin());
     }
  /*   @Test
