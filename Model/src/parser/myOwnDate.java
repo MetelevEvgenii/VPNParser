@@ -15,7 +15,12 @@ public class myOwnDate {
          dateString=date;
         cutDateString(date);
     }
-
+    public myOwnDate(myOwnDate dataODL) {
+        this.dateString = new String(dataODL.dateString);
+    }
+    public myOwnDate copy() {
+        return new myOwnDate(this);
+    }
     public void cutDateString(String tmpDate)
     {
         if (!tmpDate.equals(""))

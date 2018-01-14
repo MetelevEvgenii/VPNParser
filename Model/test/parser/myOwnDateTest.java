@@ -76,4 +76,38 @@ public class myOwnDateTest {
     }
 
 
+  /*  @Test
+    public void sortFolder() throws IOException {
+        String folderSourceName="K:\\30.09.17";
+        String folderName="";
+        String mask="";
+        File[]fList;
+        File F = new File(folderSourceName);
+
+        fList = F.listFiles();
+
+        for(int i=0; i<fList.length; i++)
+        {
+            if(fList[i].isFile())
+            {
+                mask="";
+                for (int k=0; k<fList[i].getName().lastIndexOf("_");k++)
+                    mask=mask+fList[i].getName().substring(k,k+1);
+
+                File folder = new File(folderSourceName+"\\"+mask);
+                if (!folder.exists()) {
+                    folder.mkdir();
+                }
+                File source = new File(fList[i].getAbsolutePath());
+                File dest = new File(folder.getAbsolutePath()+"\\"+fList[i].getName());
+                source.renameTo(dest);
+            }
+
+
+        }
+
+    }*/
+
+
+
 }

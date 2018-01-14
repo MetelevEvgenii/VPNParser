@@ -20,6 +20,7 @@ public class CurLogin {
     }
 
     public void setIndex(int index) {
+
         this.index = index;
     }
 }
